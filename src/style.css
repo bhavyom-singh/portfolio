@@ -96,7 +96,7 @@ button:focus {
     border: 2px solid #623686 !important;
     border-radius: 5px !important;
     color: white !important;
-  } 
+  }
 }
 /* --------- */
 /* Navbar Section  */
@@ -282,8 +282,8 @@ button:focus {
 
 .home-section {
   position: relative;
-  z-index: -1;
-  background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
+  /* z-index: -1; */
+  /* background-image: var(--image-gradient), url(./Assets/home-bg.jpg); */
   background-position: top center;
   background-repeat: no-repeat;
   padding-bottom: 30px !important;
@@ -299,17 +299,23 @@ button:focus {
 .heading {
   font-size: 2.4em !important;
   padding-left: 45px !important;
+  cursor: default;
 }
 
 .heading-name {
   font-size: 2.5em !important;
   padding-left: 45px !important;
+  cursor: default;
 }
 
 .main-name {
   color: #cd5ff8;
 }
-
+.heading-type {
+  padding-left: 46px;
+  text-align: left;
+  cursor: default;
+}
 .Typewriter__wrapper {
   font-size: 2.2em !important;
   color: #be6adf !important;
@@ -319,7 +325,10 @@ button:focus {
   font-size: 2.4em !important;
   color: #b562d6 !important;
 }
-
+#button-resume-linkedin {
+  padding-left: 46px !important;
+  text-align: left !important;
+}
 @media (max-width: 767px) {
   .Typewriter__wrapper {
     font-size: 1.4em !important;

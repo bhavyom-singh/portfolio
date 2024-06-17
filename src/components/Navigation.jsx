@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Container } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import logo from "../Assets/Bavi1.png";
 import Button from "react-bootstrap/Button";
 import { CgGitFork } from "react-icons/cg";
 import { ImBlog } from "react-icons/im";
