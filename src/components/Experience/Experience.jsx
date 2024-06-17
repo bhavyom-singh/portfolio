@@ -6,7 +6,7 @@ export default function Experience() {
     <Container fluid className="project-section" id="experience">
       <Container>
         <h1 className="project-heading">
-          My <strong className="purple">Experinece </strong>
+          My <strong className="purple">Experience </strong>
         </h1>
         <p style={{ color: "white" }}>As A Software Engineer</p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
