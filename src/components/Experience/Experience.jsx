@@ -13,7 +13,7 @@ export default function Experience() {
           <Col md={4} className="project-card">
             <ExperienceCard
               designation="Software Engineer"
-              companyName="Emtec Inc"
+              companyName="Emtec Inc. (Acquired by Bridgenext)"
               duration="February 2022 - August 2022"
               description="At Emtec Inc., I successfully developed a user-friendly insurance quote application that integrated data from multiple underwriters, greatly enhancing the quoting process for users. I authored over 50 REST APIs and function app projects using .NET Core, MSSQL, and Microsoft Azure, creating robust and scalable backend solutions."
             />
