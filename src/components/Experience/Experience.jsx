@@ -50,7 +50,7 @@ export default function Experience() {
               designation="Teaching Associate"
               companyName="California State University Fullerton"
               duration="January 2024 - May 2024"
-              description="I successfully planned and taught Web Front-End Engineering to a class of 44 students, covering HTML, CSS, JavaScript, and ReactJS in an interactive and engaging setting. This experience honed my teaching skills and deepened my understanding of front-end technologies, while also enabling me to effectively convey complex concepts to a diverse group of students."
+              description="I successfully planned and taught Full-Stack Developement to a class of 44 students, covering HTML, CSS, JavaScript, ReactJS and Django in an interactive and engaging setting. This experience honed my teaching skills and deepened my understanding of front-end and back-end technologies, while also enabling me to effectively convey complex concepts to a diverse group of students. It was a part-time job."
             />
           </Col>
           <Col md={4} className="project-card">
@@ -58,7 +58,7 @@ export default function Experience() {
               designation="Research Assistant"
               companyName="California State University Fullerton"
               duration="August 2023 - May 2024"
-              description="At the Social Science Research Center (A division in CSUF, that comes under Auxiliary Services Corporation), I provided comprehensive support to the Director and the Administrative Operations Manager. I was responsible for data collection and data entry into the database, ensuring accurate and timely information management. This role enhanced my organizational skills and attention to detail, contributing to the smooth operation of the center."
+              description="At the Social Science Research Center (A division in CSUF, that comes under Auxiliary Services Corporation), I provided comprehensive support to the Director and the Administrative Operations Manager. I was responsible for data collection and data entry into the database, ensuring accurate and timely information management. This role enhanced my organizational skills and attention to detail, contributing to the smooth operation of the center. It was a part-time job."
             />
           </Col>
           <Col md={4} className="project-card">
@@ -66,7 +66,7 @@ export default function Experience() {
               designation="Tutor"
               companyName="Self Employed"
               duration="May 2020 - February 2022"
-              description="During the COVID-19 pandemic, I taught mathematics to high school students, adapting to remote teaching methods to ensure continuous learning. This experience enhanced my ability to convey complex concepts in an understandable manner and demonstrated my commitment to education during challenging times. It also improved my communication and virtual teaching skills, ensuring that students remained engaged and successful despite the circumstances."
+              description="During the COVID-19 pandemic, I taught mathematics to high school students, adapting to remote teaching methods to ensure continuous learning. This experience enhanced my ability to convey complex concepts in an understandable manner and demonstrated my commitment to education during challenging times. It also improved my communication and virtual teaching skills, ensuring that students remained engaged and successful despite the circumstances. It was a part-time job."
             />
           </Col>
         </Row>

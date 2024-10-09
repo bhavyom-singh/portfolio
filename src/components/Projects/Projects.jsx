@@ -3,6 +3,8 @@ import ProjectCard from "./ProjectCards";
 import DatingApp from "../../Assets/Projects/DatingApp.png";
 import HWDR from "../../Assets/Projects/HWDR.png";
 import Streamify from "../../Assets/Projects/Streamify.png";
+import SmartReceipts from "../../Assets/Projects/SmartReceipts.png";
+import TextToImage from "../../Assets/Projects/TxtToImg.png";
 
 export default function Projects() {
   return (
@@ -42,6 +44,24 @@ export default function Projects() {
               title="Dating App"
               description="I developed a comprehensive application leveraging Angular and .NET Core, designed for the dating context. The application includes features such as user registration, information management, photo integration, and messaging functionality. This project enhanced the user experience significantly and showcased my ability to create robust, full-stack solutions with modern web technologies."
               ghLink="https://github.com/bhavyom-singh/DatingApp"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={SmartReceipts}
+              isBlog={false}
+              title="Smart Receipts"
+              description="Engineered a robust receipt management solution, Smart Receipts, integrating Google Cloud Vision for real-time text extraction and Hugging Face NLP models for category classification, which automates spending analytics and generates comprehensive Excel reports for streamlined expense tracking and insights."
+              ghLink="https://github.com/bhavyom-singh/SmartReceipts"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={TextToImage}
+              isBlog={false}
+              title="Text-to-Image Desktop App"
+              description="Designed an innovative text-to-image generation application utilizing Hugging Face models and Nvidia CUDA acceleration, paired with a modern CustomTKinter desktop UI. This project showcases expertise in merging AI and GPU technologies to transform text inputs into high-quality images with exceptional speed and precision."
+              ghLink="https://github.com/bhavyom-singh/Text-to-ImageDesktopApp"
             />
           </Col>
         </Row>

@@ -9,18 +9,14 @@ export default function ProjectCards(props) {
       {props.imgPath && (
         <Card.Img variant="top" src={props.imgPath} alt="card-img" />
       )}
-
-      <Card.Body>
+      <Card.Header>
         <Card.Title>{props.title}</Card.Title>
+      </Card.Header>
+      <Card.Body>
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
         </Card.Text>
-        {props.ghLink && (
-          <Button variant="primary" href={props.ghLink} target="_blank">
-            <BsGithub /> &nbsp;
-            {props.isBlog ? "Blog" : "GitHub"}
-          </Button>
-        )}
+
         {"\n"}
         {"\n"}
 
@@ -38,6 +34,16 @@ export default function ProjectCards(props) {
           </Button>
         )} */}
       </Card.Body>
+      <Card.Footer>
+        {props.ghLink && (
+          <Button variant="primary" href={props.ghLink} target="_blank">
+            <BsGithub /> &nbsp;
+            {props.isBlog ? "Blog" : "GitHub"}
+          </Button>
+        )}
+        {"\n"}
+        {"\n"}
+      </Card.Footer>
     </Card>
   );
 }
