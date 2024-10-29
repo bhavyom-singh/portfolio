@@ -23,7 +23,7 @@ export default function ContactMe() {
             <h3 style={{ paddingTop: "10px" }}>
               <MdOutlineContactMail />{" "}
               <a
-                href="mailto:bhavyom19@mail.com"
+                href="mailto:bhavyom19@gmail.com"
                 style={{ textDecoration: "none", color: "white" }}
               >
                 bhavyom19@gmail.com
