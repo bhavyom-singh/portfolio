@@ -26,7 +26,7 @@ export default function ContactMe() {
                 href="mailto:bhavyom19@mail.com"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                bhavyom19@mail.com
+                bhavyom19@gmail.com
               </a>
             </h3>
           </Col>
