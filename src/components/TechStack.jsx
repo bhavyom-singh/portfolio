@@ -8,13 +8,13 @@ import {
   DiPython,
   DiGit,
   DiJava,
+  DiMsqlServer,
 } from "react-icons/di";
 import {
   SiPytorch,
   SiTensorflow,
   SiAngular,
   SiMysql,
-  SiMicrosoftsqlserver,
   SiDotnet,
   SiMicrosoftazure,
   SiApachekafka,
@@ -33,7 +33,7 @@ export default function TechStack() {
         <SiDotnet />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiMicrosoftsqlserver />
+        <DiMsqlServer />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiMysql />
