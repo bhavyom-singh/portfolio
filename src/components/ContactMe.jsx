@@ -16,7 +16,7 @@ export default function ContactMe() {
         <Row>
           <Col md="4" className="home-about-social">
             <h3 style={{ paddingTop: "10px" }}>
-              <MdLocationPin /> Fullerton, CA
+              <MdLocationPin /> Los Angeles, CA
             </h3>
           </Col>
           <Col md="4" className="home-about-social">

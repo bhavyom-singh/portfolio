@@ -10,6 +10,14 @@ export default function Experience() {
         </h1>
         <p style={{ color: "white" }}>As A Software Engineer</p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+        <Col md={4} className="project-card">
+            <ExperienceCard
+              designation="Software Engineer"
+              companyName="Sim Logic Inc."
+              duration="October 2024 - Present"
+              description="My area of concentration is developing communication software and plugins that connect hardware devices to high-fidelity flight simulators, guaranteeing smooth operation and real-time performance. I support the simulator's development and integration into intricate aviation systems by helping to create, implement, and provide solutions that improve its functionality while collaborating with cross-functional teams. We are using C++ and Blazor as the tech stack."
+            />
+          </Col>
           <Col md={4} className="project-card">
             <ExperienceCard
               designation="Software Engineer"
