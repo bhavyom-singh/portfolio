@@ -22,6 +22,7 @@ import {
   SiApachespark,
 } from "react-icons/si";
 import { TbBrandGolang, TbBrandCSharp } from "react-icons/tb";
+import { VscAzure } from "react-icons/vsc";
 
 export default function TechStack() {
   return (
@@ -39,7 +40,7 @@ export default function TechStack() {
         <SiMysql />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiMicrosoftazure />
+        <VscAzure />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiPython />
