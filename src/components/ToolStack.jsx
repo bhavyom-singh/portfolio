@@ -1,11 +1,8 @@
 import { Col, Row } from "react-bootstrap";
-import {
-  SiVisualstudiocode,
-  SiPostman,
-  SiMicrosoftteams ,
-  SiVercel,
-  SiAzuredevops ,
-} from "react-icons/si";
+import { SiPostman, SiVercel } from "react-icons/si";
+import { BiLogoVisualStudio } from "react-icons/bi";
+import { BsMicrosoftTeams } from "react-icons/bs";
+import { VscAzureDevops } from "react-icons/vsc";
 
 export default function ToolStack() {
   return (
@@ -14,16 +11,16 @@ export default function ToolStack() {
         <SiMacos />
       </Col> */}
       <Col xs={4} md={2} className="tech-icons">
-        <SiVisualstudiocode />
+        <BiLogoVisualStudio />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiPostman />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiMicrosoftteams  />
+        <BsMicrosoftTeams />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-      <SiAzuredevops />
+        <VscAzureDevops />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiVercel />

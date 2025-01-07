@@ -16,7 +16,6 @@ import {
   SiAngular,
   SiMysql,
   SiDotnet,
-  SiMicrosoftazure,
   SiApachekafka,
   SiApachecassandra,
   SiApachespark,
