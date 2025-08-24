@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import DatingApp from "../../Assets/Projects/DatingApp.png";
@@ -5,8 +6,34 @@ import HWDR from "../../Assets/Projects/HWDR.png";
 import Streamify from "../../Assets/Projects/Streamify.png";
 import SmartReceipts from "../../Assets/Projects/SmartReceipts.png";
 import TextToImage from "../../Assets/Projects/TxtToImg.png";
+import { sendGAEvent } from "../../analytics";
 
 export default function Projects() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            sendGAEvent("section_view", { section: "Projects" });
+          }
+        });
+      },
+      { threshold: 0.5 } // trigger when 50% of the section is visible
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   return (
     <Container fluid className="project-section" id="project">
       <Container>

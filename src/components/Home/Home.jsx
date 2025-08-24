@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Type from "./Type";
 import homeLogo from "../../Assets/home-main.svg";
@@ -8,6 +9,31 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { sendGAEvent } from "../../analytics";
 
 export default function Home() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            sendGAEvent("section_view", { section: "Home" });
+          }
+        });
+      },
+      { threshold: 0.5 } // trigger when 50% of the section is visible
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   return (
     <Container fluid className="home-section" id="home">
       <Container className="home-content">
@@ -40,7 +66,7 @@ export default function Home() {
                   maxWidth: "250px",
                 }}
                 onClick={() =>
-                  sendGAEvent("resume_download", {
+                  sendGAEvent("home_resume_download", {
                     file: "/resume.pdf",
                   })
                 }
@@ -54,7 +80,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  sendGAEvent("linkedin_click", {
+                  sendGAEvent("home_linkedin_click", {
                     link_url: "https://www.linkedin.com/in/bhavyom-singh/",
                   })
                 }

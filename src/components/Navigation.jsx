@@ -124,7 +124,7 @@ export default function Navigation() {
                 target="_blank"
                 className="fork-btn-inner"
                 onClick={() =>
-                  sendGAEvent("github_click", {
+                  sendGAEvent("navigation_github_click", {
                     link_url: "https://github.com/bhavyom-singh",
                   })
                 }
