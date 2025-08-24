@@ -1,9 +1,34 @@
+import { useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdLocationPin, MdOutlineContactMail } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
 import { sendGAEvent } from "../analytics";
 export default function ContactMe() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            sendGAEvent("section_view", { section: "ContactMe" });
+          }
+        });
+      },
+      { threshold: 0.5 } // trigger when 50% of the section is visible
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
   return (
     <Container fluid className="home-about-section" id="contact">
       <Container>
@@ -44,7 +69,7 @@ export default function ContactMe() {
                   rel="noopener noreferrer"
                   className="icon-colour  home-social-icons"
                   onClick={() =>
-                    sendGAEvent("github_click", {
+                    sendGAEvent("contact_github_click", {
                       link_url: "https://github.com/bhavyom-singh",
                     })
                   }
@@ -60,7 +85,7 @@ export default function ContactMe() {
                   rel="noopener noreferrer"
                   className="icon-colour  home-social-icons"
                   onClick={() =>
-                    sendGAEvent("linkedin_click", {
+                    sendGAEvent("contact_linkedin_click", {
                       link_url: "https://www.linkedin.com/in/bhavyom-singh/",
                     })
                   }

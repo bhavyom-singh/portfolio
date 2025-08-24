@@ -1,7 +1,34 @@
+import { useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ExperienceCard from "./ExperienceCard";
+import { sendGAEvent } from "../../analytics";
 
 export default function Experience() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            sendGAEvent("section_view", { section: "Experience" });
+          }
+        });
+      },
+      { threshold: 0.5 } // trigger when 50% of the section is visible
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   return (
     <Container fluid className="project-section" id="experience">
       <Container>
@@ -10,7 +37,7 @@ export default function Experience() {
         </h1>
         <p style={{ color: "white" }}>As A Software Engineer</p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-        <Col md={4} className="project-card">
+          <Col md={4} className="project-card">
             <ExperienceCard
               designation="Software Engineer"
               companyName="Sim Logic Inc."

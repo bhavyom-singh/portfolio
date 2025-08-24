@@ -42,9 +42,12 @@ export default function ProjectCards(props) {
             href={props.ghLink}
             target="_blank"
             onClick={() =>
-              sendGAEvent("github_click", {
-                link_url: props.ghLink,
-              })
+              sendGAEvent(
+                "project_github_" + props.title.split(" ").join("_") + "_click",
+                {
+                  link_url: props.ghLink,
+                }
+              )
             }
           >
             <BsGithub /> &nbsp;

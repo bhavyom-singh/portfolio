@@ -1,7 +1,34 @@
+import { useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import EducationCard from "./EducationCard";
+import { sendGAEvent } from "../../analytics";
 
 export default function Education() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            sendGAEvent("section_view", { section: "Education" });
+          }
+        });
+      },
+      { threshold: 0.5 } // trigger when 50% of the section is visible
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   return (
     <Container fluid className="project-section" id="education">
       <Container>
