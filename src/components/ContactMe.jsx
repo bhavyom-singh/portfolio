@@ -11,8 +11,12 @@ export default function ContactMe() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (
+            entry.isIntersecting &&
+            !sessionStorage.getItem("ContactMeSeen")
+          ) {
             sendGAEvent("section_view", { section: "ContactMe" });
+            sessionStorage.setItem("ContactMeSeen", "true");
           }
         });
       },
@@ -30,7 +34,7 @@ export default function ContactMe() {
     };
   }, []);
   return (
-    <Container fluid className="home-about-section" id="contact">
+    <Container fluid className="home-about-section" id="contact" ref={ref}>
       <Container>
         <Row>
           <Col md={12} className="home-about-social">

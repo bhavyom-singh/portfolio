@@ -11,8 +11,9 @@ export default function About() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !sessionStorage.getItem("AboutSeen")) {
             sendGAEvent("section_view", { section: "About" });
+            sessionStorage.setItem("AboutSeen", "true");
           }
         });
       },
@@ -31,7 +32,7 @@ export default function About() {
   }, []);
 
   return (
-    <Container fluid className="about-section" id="about">
+    <Container fluid className="about-section" id="about" ref={ref}>
       <Container>
         <Row style={{ justifyContent: "center", padding: "10px" }}>
           <Col
