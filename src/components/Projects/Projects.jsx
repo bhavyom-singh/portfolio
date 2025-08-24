@@ -6,6 +6,7 @@ import HWDR from "../../Assets/Projects/HWDR.png";
 import Streamify from "../../Assets/Projects/Streamify.png";
 import SmartReceipts from "../../Assets/Projects/SmartReceipts.png";
 import TextToImage from "../../Assets/Projects/TxtToImg.png";
+import FileProtectorApp from "../../Assets/Projects/FileProtectorApp.png";
 import { sendGAEvent } from "../../analytics";
 
 export default function Projects() {
@@ -54,7 +55,6 @@ export default function Projects() {
               ghLink="https://github.com/bhavyom-singh/HandWrittenDigitRecognition"
             />
           </Col>
-
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={Streamify}
@@ -64,7 +64,6 @@ export default function Projects() {
               ghLink="https://github.com/bhavyom-singh/AdvanceDatabaseProject"
             />
           </Col>
-
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={DatingApp}
@@ -90,6 +89,16 @@ export default function Projects() {
               title="Text-to-Image Desktop App"
               description="Designed an innovative text-to-image generation application utilizing Hugging Face models and Nvidia CUDA acceleration, paired with a modern CustomTKinter desktop UI. This project showcases expertise in merging AI and GPU technologies to transform text inputs into high-quality images with exceptional speed and precision."
               ghLink="https://github.com/bhavyom-singh/Text-to-ImageDesktopApp"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={FileProtectorApp}
+              isBlog={false}
+              title="File Protector App"
+              description="Developed FileProtectorApp, a secure .NET MAUI desktop utility built with MVVM, enabling AES-based file encryption and PDF password protection through a simple drag-and-drop interface. Architected for Windows today with scalability toward cross-platform expansion, combining strong design principles with user-focused functionality."
+              ghLink="https://github.com/bhavyom-singh/FileProtectorApp"
+              downloadLink="https://github.com/bhavyom-singh/FileProtectorApp/releases/download/v1.0.0/FileProtectorApp-v1.0.zip"
             />
           </Col>
         </Row>

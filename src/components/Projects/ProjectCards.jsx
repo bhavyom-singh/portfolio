@@ -55,6 +55,26 @@ export default function ProjectCards(props) {
           </Button>
         )}
         {"\n"}
+        {props.downloadLink && (
+          <Button
+            variant="primary"
+            href={props.downloadLink}
+            target="_blank"
+            onClick={() =>
+              sendGAEvent(
+                "project_github_download_" +
+                  props.title.split(" ").join("_") +
+                  "_click",
+                {
+                  link_url: props.downloadLink,
+                }
+              )
+            }
+          >
+            Download
+          </Button>
+        )}
+        {"\n"}
         {"\n"}
       </Card.Footer>
     </Card>
