@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import pdf from "../../Assets/Resume_BhavyomSinghKushwaha.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { sendGAEvent } from "../../analytics";
 
 export default function Home() {
   return (
@@ -38,6 +39,11 @@ export default function Home() {
                 style={{
                   maxWidth: "250px",
                 }}
+                onClick={() =>
+                  sendGAEvent("resume_download", {
+                    file: "/resume.pdf",
+                  })
+                }
               >
                 <AiOutlineDownload />
                 &nbsp;Download Resume
@@ -47,7 +53,11 @@ export default function Home() {
                 style={{ color: "white", margin: "10px" }}
                 target="_blank"
                 rel="noopener noreferrer"
-                // className="icon-colour  home-social-icons"
+                onClick={() =>
+                  sendGAEvent("linkedin_click", {
+                    link_url: "https://www.linkedin.com/in/bhavyom-singh/",
+                  })
+                }
               >
                 <FaLinkedinIn />
               </Button>

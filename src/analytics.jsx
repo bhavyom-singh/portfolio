@@ -1,5 +1,7 @@
 export function sendGAEvent(name, params = {}) {
-  if (window.gtag) window.gtag("event", name, params);
+  if (typeof window.gtag !== "undefined") {
+    if (window.gtag) window.gtag("event", name, params);
+  }
 }
 
 export function trackPageview(url) {
