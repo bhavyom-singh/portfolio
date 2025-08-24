@@ -2,6 +2,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
+import { sendGAEvent } from "../../analytics";
 
 export default function ProjectCards(props) {
   return (
@@ -36,7 +37,16 @@ export default function ProjectCards(props) {
       </Card.Body>
       <Card.Footer>
         {props.ghLink && (
-          <Button variant="primary" href={props.ghLink} target="_blank">
+          <Button
+            variant="primary"
+            href={props.ghLink}
+            target="_blank"
+            onClick={() =>
+              sendGAEvent("github_click", {
+                link_url: props.ghLink,
+              })
+            }
+          >
             <BsGithub /> &nbsp;
             {props.isBlog ? "Blog" : "GitHub"}
           </Button>

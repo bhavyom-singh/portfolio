@@ -2,6 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdLocationPin, MdOutlineContactMail } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
+import { sendGAEvent } from "../analytics";
 export default function ContactMe() {
   return (
     <Container fluid className="home-about-section" id="contact">
@@ -25,6 +26,9 @@ export default function ContactMe() {
               <a
                 href="mailto:bhavyom19@gmail.com"
                 style={{ textDecoration: "none", color: "white" }}
+                onClick={() =>
+                  sendGAEvent("contact_email_click", { method: "mailto" })
+                }
               >
                 bhavyom19@gmail.com
               </a>
@@ -39,6 +43,11 @@ export default function ContactMe() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="icon-colour  home-social-icons"
+                  onClick={() =>
+                    sendGAEvent("github_click", {
+                      link_url: "https://github.com/bhavyom-singh",
+                    })
+                  }
                 >
                   <AiFillGithub />
                 </a>
@@ -50,6 +59,11 @@ export default function ContactMe() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="icon-colour  home-social-icons"
+                  onClick={() =>
+                    sendGAEvent("linkedin_click", {
+                      link_url: "https://www.linkedin.com/in/bhavyom-singh/",
+                    })
+                  }
                 >
                   <FaLinkedinIn />
                 </a>

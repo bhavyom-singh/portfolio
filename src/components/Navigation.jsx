@@ -14,6 +14,7 @@ import {
 import { CgFileDocument } from "react-icons/cg";
 import { RiContactsLine } from "react-icons/ri";
 import { GiSkills } from "react-icons/gi";
+import { sendGAEvent } from "../analytics";
 
 export default function Navigation() {
   const [expand, updateExpanded] = useState(false);
@@ -122,6 +123,11 @@ export default function Navigation() {
                 href="https://github.com/bhavyom-singh"
                 target="_blank"
                 className="fork-btn-inner"
+                onClick={() =>
+                  sendGAEvent("github_click", {
+                    link_url: "https://github.com/bhavyom-singh",
+                  })
+                }
               >
                 <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
                 <AiFillStar style={{ fontSize: "1.1em" }} />
