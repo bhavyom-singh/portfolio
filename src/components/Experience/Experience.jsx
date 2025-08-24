@@ -10,8 +10,12 @@ export default function Experience() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (
+            entry.isIntersecting &&
+            !sessionStorage.getItem("ExperienceSeen")
+          ) {
             sendGAEvent("section_view", { section: "Experience" });
+            sessionStorage.setItem("ExperienceSeen", "true");
           }
         });
       },
@@ -30,7 +34,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <Container fluid className="project-section" id="experience">
+    <Container fluid className="project-section" id="experience" ref={ref}>
       <Container>
         <h1 className="project-heading">
           My <strong className="purple">Experience </strong>

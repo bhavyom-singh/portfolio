@@ -10,8 +10,12 @@ export default function Education() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (
+            entry.isIntersecting &&
+            !sessionStorage.getItem("EducationSeen")
+          ) {
             sendGAEvent("section_view", { section: "Education" });
+            sessionStorage.setItem("EducationSeen", "true");
           }
         });
       },
@@ -30,7 +34,7 @@ export default function Education() {
   }, []);
 
   return (
-    <Container fluid className="project-section" id="education">
+    <Container fluid className="project-section" id="education" ref={ref}>
       <Container>
         <h1 className="project-heading">
           My <strong className="purple">Education </strong>

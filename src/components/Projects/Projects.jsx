@@ -15,8 +15,9 @@ export default function Projects() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !sessionStorage.getItem("ProjectsSeen")) {
             sendGAEvent("section_view", { section: "Projects" });
+            sessionStorage.setItem("ProjectsSeen", "true");
           }
         });
       },
@@ -35,7 +36,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <Container fluid className="project-section" id="project">
+    <Container fluid className="project-section" id="project" ref={ref}>
       <Container>
         <h1 className="project-heading">
           My Recent <strong className="purple">Works </strong>

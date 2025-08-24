@@ -11,8 +11,9 @@ export default function Skillset() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !sessionStorage.getItem("SkillSetSeen")) {
             sendGAEvent("section_view", { section: "Skillset" });
+            sessionStorage.setItem("SkillSetSeen", "true");
           }
         });
       },
@@ -31,7 +32,7 @@ export default function Skillset() {
   }, []);
 
   return (
-    <Container fluid className="about-section" id="skill">
+    <Container fluid className="about-section" id="skill" ref={ref}>
       <Container>
         <h1 className="project-heading">
           Professional <strong className="purple">Skillset </strong>

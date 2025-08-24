@@ -15,8 +15,9 @@ export default function Home() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !sessionStorage.getItem("HomeSeen")) {
             sendGAEvent("section_view", { section: "Home" });
+            sessionStorage.setItem("HomeSeen", "true");
           }
         });
       },
@@ -35,7 +36,7 @@ export default function Home() {
   }, []);
 
   return (
-    <Container fluid className="home-section" id="home">
+    <Container fluid className="home-section" id="home" ref={ref}>
       <Container className="home-content">
         <Row>
           <Col md={7} className="home-header">
