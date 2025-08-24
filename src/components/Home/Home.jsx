@@ -24,7 +24,7 @@ export default function Home() {
               <strong className="main-name"> Bhavyom</strong>
             </h1>
             <h3 className="heading-name">
-              But you can call me <strong className="main-name"> Bavi </strong>
+              But you can call me <strong className="main-name"> Bhavi </strong>
             </h3>
             <div className="heading-type">
               <Type />

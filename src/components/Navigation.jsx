@@ -46,7 +46,7 @@ export default function Navigation() {
               fontWeight: "bolder",
             }}
           >
-            Bavi
+            Bhavi
           </span>
         </Navbar.Brand>
         <Navbar.Toggle

@@ -12,8 +12,12 @@ import Education from "./components/Education/Education";
 import Experience from "./components/Experience/Experience";
 import Skillset from "./components/Skillset";
 import ContactMe from "./components/ContactMe";
+import { trackPageview } from "./analytics";
 
 function App() {
+  useEffect(() => {
+    trackPageview(window.location.href); // initial page load
+  }, []);
   const [load, upadateLoad] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
