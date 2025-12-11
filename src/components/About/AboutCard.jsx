@@ -8,7 +8,7 @@ export default function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            I am a Software Engineer with over four years of experience,
+            I am a Software Engineer with almost five years of experience,
             specializing in the Microsoft Stack, including C#, .NET Core, .NET
             Framework, Entity Framework, T-SQL, and Microsoft Azure. I hold a
             Master's degree in Computer Science from California State
